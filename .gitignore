@@ -1,0 +1,19 @@
+# .gitignore
+# Ignore large outputs, temporary/intermediate files
+
+# GUIDANCE outputs
+data/guidance_outputs/
+
+# RAxML output (optional if reproducible)
+data/raxml_protein_output/
+
+# Ignore temporary files
+*.scr
+*.html
+*.log
+*.tmp
+*.swp
+
+# Ignore Git-related junk
+*.pack
+*.idx

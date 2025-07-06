@@ -1,0 +1,177 @@
+--------------------------------------------------------------------------------
+ModelTest-NG v0.2.0
+
+Input data:
+  MSA:        MSA.MAFFT.Without_low_SP_Col.With_Names
+  Tree:       Maximum parsimony
+    file:           -
+  #taxa:            1145
+  #sites:           1199
+  #patterns:        833
+  Max. thread mem:  2333 MB
+
+Output:
+  Log:           /home/pratush/dev/paper2/data/modeltest_protein_output/modeltest_results.log
+  Starting tree: /home/pratush/dev/paper2/data/modeltest_protein_output/modeltest_results.tree
+  Results:       /home/pratush/dev/paper2/data/modeltest_protein_output/modeltest_results.out
+
+Selection options:
+  # protein matrices: 19
+  # protein models:   57
+  include model parameters:
+    Uniform:         false
+    p-inv (+I):      true
+    gamma (+G):      true
+    both (+I+G):     true
+    free rates (+R): false
+    fixed freqs:     true
+    estimated freqs: false
+    #categories:     4
+  gamma rates mode:   mean
+  asc bias:           none
+  epsilon (opt):      0.01
+  epsilon (par):      0.05
+  keep branches:      false
+
+Additional options:
+  verbosity:        very low
+  threads:          4/8
+  RNG seed:         12345
+  subtree repeats:  enabled
+--------------------------------------------------------------------------------
+
+BIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  JTT+I+G4           2    -45951.9859    108131.2494         0.0000    1.0000
+       2  JTT+G4             1    -45968.1594    108156.5071        25.2577    0.0000
+       3  JTT-DCMUT+I+G4     2    -45976.3943    108180.0663        48.8169    0.0000
+       4  JTT-DCMUT+G4       1    -45992.1674    108204.5232        73.2738    0.0000
+       5  WAG+I+G4           2    -46602.5045    109432.2865      1301.0371    0.0000
+       6  WAG+G4             1    -46620.6513    109461.4910      1330.2416    0.0000
+       7  HIVB+I+G4          2    -46673.7075    109574.6926      1443.4432    0.0000
+       8  LG+I+G4            2    -46678.4126    109584.1027      1452.8533    0.0000
+       9  CPREV+I+G4         2    -46681.4982    109590.2739      1459.0246    0.0000
+      10  HIVB+G4            1    -46689.3701    109598.9286      1467.6792    0.0000
+--------------------------------------------------------------------------------
+Best model according to BIC
+---------------------------
+Model:              JTT+I+G4
+lnL:                -45951.9859
+Frequencies:        0.0767 0.0517 0.0426 0.0515 0.0198 0.0408 0.0618 0.0732 0.0229 0.0538 0.0919 0.0587 0.0238 0.0401 0.0509 0.0688 0.0586 0.0143 0.0321 0.0660
+Inv. sites prop:    0.0834
+Gamma shape:        0.9028
+Score:              108131.2494
+Weight:             1.0000
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        -
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              0.7243
+Alpha-P.Inv:        0.9028
+P.Inv-Alpha:        0.0834
+Frequencies:        -
+
+Commands:
+  > phyml  -i MSA.MAFFT.Without_low_SP_Col.With_Names -d aa -m JTT -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s MSA.MAFFT.Without_low_SP_Col.With_Names -m PROTGAMMAIJTT -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa MSA.MAFFT.Without_low_SP_Col.With_Names --model JTT+I+G4
+  > paup -s MSA.MAFFT.Without_low_SP_Col.With_Names
+  > iqtree -s MSA.MAFFT.Without_low_SP_Col.With_Names -m JTT+I+G4
+
+AIC       model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  JTT+I+G4           2    -45951.9859     96481.9718         0.0000    1.0000
+       2  JTT+G4             1    -45968.1594     96512.3187        30.3469    0.0000
+       3  JTT-DCMUT+I+G4     2    -45976.3943     96530.7887        48.8169    0.0000
+       4  JTT-DCMUT+G4       1    -45992.1674     96560.3349        78.3630    0.0000
+       5  WAG+I+G4           2    -46602.5045     97783.0090      1301.0371    0.0000
+       6  WAG+G4             1    -46620.6513     97817.3027      1335.3309    0.0000
+       7  HIVB+I+G4          2    -46673.7075     97925.4150      1443.4432    0.0000
+       8  LG+I+G4            2    -46678.4126     97934.8252      1452.8533    0.0000
+       9  CPREV+I+G4         2    -46681.4982     97940.9964      1459.0246    0.0000
+      10  HIVB+G4            1    -46689.3701     97954.7402      1472.7684    0.0000
+--------------------------------------------------------------------------------
+Best model according to AIC
+---------------------------
+Model:              JTT+I+G4
+lnL:                -45951.9859
+Frequencies:        0.0767 0.0517 0.0426 0.0515 0.0198 0.0408 0.0618 0.0732 0.0229 0.0538 0.0919 0.0587 0.0238 0.0401 0.0509 0.0688 0.0586 0.0143 0.0321 0.0660
+Inv. sites prop:    0.0834
+Gamma shape:        0.9028
+Score:              96481.9718
+Weight:             1.0000
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              0.0000
+Gamma-Inv:          1.0000
+Frequencies:        -
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              0.7243
+Alpha-P.Inv:        0.9028
+P.Inv-Alpha:        0.0834
+Frequencies:        -
+
+Commands:
+  > phyml  -i MSA.MAFFT.Without_low_SP_Col.With_Names -d aa -m JTT -f m -v e -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s MSA.MAFFT.Without_low_SP_Col.With_Names -m PROTGAMMAIJTT -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa MSA.MAFFT.Without_low_SP_Col.With_Names --model JTT+I+G4
+  > paup -s MSA.MAFFT.Without_low_SP_Col.With_Names
+  > iqtree -s MSA.MAFFT.Without_low_SP_Col.With_Names -m JTT+I+G4
+
+AICc      model              K            lnL          score          delta    weight
+--------------------------------------------------------------------------------
+       1  JTT+G4             1    -45968.1594  10570976.3187         0.0000    1.0000
+       2  JTT-DCMUT+G4       1    -45992.1674  10571024.3349        48.0161    0.0000
+       3  WAG+G4             1    -46620.6513  10572281.3027      1304.9840    0.0000
+       4  HIVB+G4            1    -46689.3701  10572418.7402      1442.4215    0.0000
+       5  LG+G4              1    -46689.6323  10572419.2647      1442.9459    0.0000
+       6  CPREV+G4           1    -46693.5287  10572427.0574      1450.7387    0.0000
+       7  VT+G4              1    -46710.4281  10572460.8562      1484.5375    0.0000
+       8  FLU+G4             1    -46848.9691  10572737.9381      1761.6194    0.0000
+       9  DAYHOFF+G4         1    -47189.6304  10573419.2608      2442.9421    0.0000
+      10  DCMUT+G4           1    -47196.2051  10573432.4101      2456.0914    0.0000
+--------------------------------------------------------------------------------
+Best model according to AICc
+---------------------------
+Model:              JTT+G4
+lnL:                -45968.1594
+Frequencies:        0.0767 0.0517 0.0426 0.0515 0.0198 0.0408 0.0618 0.0732 0.0229 0.0538 0.0919 0.0587 0.0238 0.0401 0.0509 0.0688 0.0586 0.0143 0.0321 0.0660
+Inv. sites prop:    -
+Gamma shape:        0.7243
+Score:              10570976.3187
+Weight:             1.0000
+---------------------------
+Parameter importances
+---------------------------
+P.Inv:              -
+Gamma:              1.0000
+Gamma-Inv:          -
+Frequencies:        -
+---------------------------
+Model averaged estimates
+---------------------------
+P.Inv:              -
+Alpha:              0.7243
+Alpha-P.Inv:        -
+P.Inv-Alpha:        -
+Frequencies:        -
+
+Commands:
+  > phyml  -i MSA.MAFFT.Without_low_SP_Col.With_Names -d aa -m JTT -f m -v 0 -a e -c 4 -o tlr
+  > raxmlHPC-SSE3 -s MSA.MAFFT.Without_low_SP_Col.With_Names -m PROTGAMMAJTT -n EXEC_NAME -p PARSIMONY_SEED
+  > raxml-ng --msa MSA.MAFFT.Without_low_SP_Col.With_Names --model JTT+G4
+  > paup -s MSA.MAFFT.Without_low_SP_Col.With_Names
+  > iqtree -s MSA.MAFFT.Without_low_SP_Col.With_Names -m JTT+G4
+Done
